@@ -1,0 +1,80 @@
+.sidebarcontainer {
+  flex: 2;
+  border: 1px solid;
+  width: 400px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 9px 19px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 9px 19px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 9px 19px 1px rgba(0, 0, 0, 0.75);
+  position: fixed;
+  padding-bottom: 10px;
+}
+
+.header {
+  display: flex;
+  margin-top: 10px;
+}
+.name {
+  margin-right: 30px;
+  margin-left: 20px;
+  color: rgb(242, 182, 104);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.skill {
+  color: rgb(42, 42, 139);
+  font-family: cursive;
+}
+.imagecontainer {
+  display: flex;
+  flex-direction: column;
+}
+.image {
+  -webkit-box-shadow: 2px 9px 19px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 9px 19px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 9px 19px 1px rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  height: 350px;
+  width: 300px;
+  align-self: center;
+}
+.address {
+  margin-top: 30px;
+  text-align: center;
+}
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.sociallinks {
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center children horizontally */
+  text-align: center; /* Center text within the container */
+}
+
+.socialicons {
+  display: flex; /* Use Flexbox for icons */
+  justify-content: center; /* Center icons horizontally */
+}
+
+.socialicons img {
+  margin: 0 10px;
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  margin: 5px 0px;
+  border-radius: 50%;
+}
+
+.contactme {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: rgb(64, 68, 160);
+  width: 200px;
+  border: none;
+  color: #fff;
+}

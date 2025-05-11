@@ -1,0 +1,25 @@
+.introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 30px;
+  background-color: rgb(47, 35, 140);
+  color: white;
+  padding: 0px 10px;
+  width: 120px;
+}
+
+.introicon {
+  color: #fff !important; /* Ensure icon color is white */
+  font-size: 24px; /* Adjust size if needed */
+}
+
+.aboutme span {
+  display: inline-block;
+  max-width: 700px; /* Adjust based on line height */
+  line-height: 1.5em; /* Adjust line height to fit 8 lines */
+  overflow: hidden; /* Hide overflow text */
+  text-align: justify;
+}

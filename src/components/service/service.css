@@ -1,0 +1,34 @@
+.servicecontainer {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+}
+.serviceheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 30px;
+  color: white;
+  background-color: rgb(47, 35, 140);
+  padding: 0px 10px;
+  width: 120px;
+  margin-bottom: 20px;
+}
+.graphicservice {
+  -webkit-box-shadow: inset -2px 1px 17px -1px rgba(17, 21, 140, 0.66);
+  -moz-box-shadow: inset -2px 1px 17px -1px rgba(17, 21, 140, 0.66);
+  box-shadow: inset -2px 1px 17px -1px rgba(17, 21, 140, 0.66);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.graphicservice h1 {
+  font-weight: 700;
+  font-family: monospace;
+}
+.graphicservice h3 {
+  font-family: cursive;
+}

@@ -1,0 +1,14 @@
+.appContainer {
+  margin-top: -800px;
+  padding: 0;
+  scroll-behavior: smooth;
+  margin-left: 500px;
+}
+
+/* Optional: style each section for spacing */
+section {
+  padding: 100px 20px;
+  box-sizing: border-box;
+  width: 900px;
+  align-self: center;
+}
