@@ -1,25 +1,115 @@
+.aboutcontainer {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .introduction {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  border: 1px solid;
-  border-radius: 10px;
-  height: 30px;
-  background-color: rgb(47, 35, 140);
+  background: #4723d9;
   color: white;
-  padding: 0px 10px;
-  width: 120px;
+  padding: 10px 25px;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.introduction:hover {
+  transform: translateY(-2px);
 }
 
 .introicon {
-  color: #fff !important; /* Ensure icon color is white */
-  font-size: 24px; /* Adjust size if needed */
+  font-size: 24px;
+  color: white;
+}
+
+.introduction h4 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* === Content Layout === */
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aboutme {
+  flex: 1;
+  max-width: 550px;
+}
+
+.aboutme h1 {
+  font-size: 32px;
+  color: #2c2c2c;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.aboutme h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #4723d9;
 }
 
 .aboutme span {
-  display: inline-block;
-  max-width: 700px; /* Adjust based on line height */
-  line-height: 1.5em; /* Adjust line height to fit 8 lines */
-  overflow: hidden; /* Hide overflow text */
-  text-align: justify;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Image styling */
+.about-image {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-top: 30px;
+  }
+
+  .aboutme h1 {
+    font-size: 26px;
+  }
 }

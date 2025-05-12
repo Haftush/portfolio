@@ -1,0 +1,163 @@
+.navbar {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 10px;
+  background: #2a2a8b;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.tooltip {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2a2a8b;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 15px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.nav-item:hover .tooltip {
+  opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 0;
+    padding: 10px 5px;
+  }
+
+  .tooltip {
+    top: -40px;
+    right: 50%;
+    transform: translateX(50%);
+    margin-right: 0;
+  }
+}
+
+.nav-list {
+  list-style: none;
+  padding: 10px;
+  background: #2a2a8b;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.tooltip {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2a2a8b;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 15px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.nav-item:hover .tooltip {
+  opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 0;
+    padding: 10px 5px;
+  }
+
+  .tooltip {
+    top: -40px;
+    right: 50%;
+    transform: translateX(50%);
+    margin-right: 0;
+  }
+}

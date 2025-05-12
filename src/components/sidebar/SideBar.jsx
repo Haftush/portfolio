@@ -6,7 +6,6 @@ import youtube from "../../assets/youtube.png";
 import linkedin from "../../assets/linkedin.jpg";
 
 const SideBar = () => {
-  // 👇 Add this function
   const contactpage = () => {
     const contactSection = document.getElementById("contact");
     if (contactSection) {
@@ -15,37 +14,69 @@ const SideBar = () => {
   };
 
   return (
-    <div className="sidebarcontainer">
+    <div className="sidebar-container">
       <div className="header">
         <h1 className="name">Haftu</h1>
         <h2 className="skill">Design & Develop</h2>
       </div>
-      <div className="imagecontainer">
-        <img src={Profile} alt="" className="image" />
-        <div className="address">
-          <span>
-            <a href="mailto:haftu.g.mu24@gmail.com" className="email">
-              <h3>haftu.g.mu24@gmail.com</h3>
-            </a>
-            <h3 className="location">Addis Abeba, Ethiopia</h3>
-          </span>
+
+      <div className="profile-section">
+        <img
+          src={Profile}
+          alt="Haftu Girmay's profile"
+          className="profile-image"
+        />
+        <div className="contact-info">
+          <a href="mailto:haftu.g.mu24@gmail.com" className="email">
+            haftu.g.mu24@gmail.com
+          </a>
+          <p className="location">Addis Ababa, Ethiopia</p>
+        </div>
+      </div>
+
+      <div className="footer-section">
+        <div className="social-links">
+          <a
+            href="https://www.youtube.com/@luxurydesigndevelop"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="YouTube"
+          >
+            <img src={youtube} alt="YouTube channel" className="social-icon" />
+          </a>
+          <a
+            href="https://www.instagram.com/luxurydesigndevelop"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram"
+          >
+            <img
+              src={instagram}
+              alt="Instagram profile"
+              className="social-icon"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/haftu-girmay-13b516355"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+          >
+            <img
+              src={linkedin}
+              alt="LinkedIn profile"
+              className="social-icon"
+            />
+          </a>
         </div>
 
-        <div className="sociallinks">
-          <p className="copyright">
-            &copy; {new Date().getFullYear()} | Haftu. All Rights Reserved
-          </p>
-          <div className="socialicons">
-            <img src={youtube} alt="" />
-            <img src={instagram} alt="" />
-            <img src={linkedin} alt="" />
-          </div>
+        <button className="contact-btn" onClick={contactpage}>
+          HIRE ME
+        </button>
 
-          {/* 👇 Call the scroll function on click */}
-          <button className="contactme" onClick={contactpage}>
-            HIRE ME
-          </button>
-        </div>
+        <p className="copyright">
+          © {new Date().getFullYear()} | Haftu. All Rights Reserved
+        </p>
       </div>
     </div>
   );

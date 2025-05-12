@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./topbar.css";
+import "./navbar.css";
 
+// Import Material UI Icons
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
 import RecordVoiceOverOutlinedIcon from "@mui/icons-material/RecordVoiceOverOutlined";
 import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
@@ -9,7 +10,7 @@ import ConstructionOutlinedIcon from "@mui/icons-material/ConstructionOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
 
 const NavBar = () => {
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
 
   const menuItems = [
     { icon: <CottageOutlinedIcon />, tooltip: "Home", targetId: "home" },
@@ -26,12 +27,12 @@ const NavBar = () => {
     {
       icon: <DryCleaningOutlinedIcon />,
       tooltip: "Services",
-      targetId: "service",
+      targetId: "services",
     },
     {
       icon: <ConstructionOutlinedIcon />,
       tooltip: "Skills",
-      targetId: "skill",
+      targetId: "skills",
     },
     {
       icon: <ContactMailOutlinedIcon />,
@@ -40,34 +41,33 @@ const NavBar = () => {
     },
   ];
 
-  const handleScroll = (id) => {
+  const handleClick = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+    setActiveItem(id);
   };
 
   return (
-    <div className="topcontainer">
-      <div className="navbar">
-        <ul>
-          {menuItems.map((item, index) => (
-            <li
-              key={index}
-              onMouseEnter={() => setHoveredItem(index)}
-              onMouseLeave={() => setHoveredItem(null)}
-              onClick={() => handleScroll(item.targetId)}
-              className="icon-container"
-            >
-              {hoveredItem === index && (
-                <div className="tooltip">{item.tooltip}</div>
-              )}
-              <div className="navbariconss">{item.icon}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <nav className="navbar">
+      <ul className="nav-list">
+        {menuItems.map((item) => (
+          <li
+            key={item.targetId}
+            className={`nav-item ${
+              activeItem === item.targetId ? "active" : ""
+            }`}
+            onClick={() => handleClick(item.targetId)}
+            onMouseEnter={() => setActiveItem(item.targetId)}
+            onMouseLeave={() => setActiveItem(null)}
+          >
+            <div className="nav-icon">{item.icon}</div>
+            <span className="tooltip">{item.tooltip}</span>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

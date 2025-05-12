@@ -4,27 +4,31 @@ import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 
 const Resume = () => {
   const resumeData = [
-    { year: "2018-2021", experience: "BSc in INFORMATION SYSTEM" },
-    { year: "2023-2024", experience: "Graphics and UI/UX designer Remote" },
     {
-      year: "2024-2025",
-      experience: (
-        <>
-          Full stack web developer and <br />
-          mobile app developer
-        </>
-      ),
+      year: "2018–2021",
+      title: "BSc in Information System",
+      type: "education",
     },
-    { year: "2025-present", experience: "I hope to be freelancer" },
+    {
+      year: "2023–2024",
+      title: "Graphics & UI/UX Designer",
+      type: "experience",
+    },
+    {
+      year: "2024–2025",
+      title: "Full Stack Web & Mobile Developer",
+      type: "experience",
+    },
+    { year: "2025–Present", title: "Freelance Developer", type: "freelance" },
   ];
 
   useEffect(() => {
-    const items = document.querySelectorAll(".history");
+    const items = document.querySelectorAll(".timeline-item");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            entry.target.classList.add("visible");
           }
         });
       },
@@ -37,24 +41,30 @@ const Resume = () => {
 
   return (
     <div className="resumecontainer">
-      <div className="resumebutton">
-        <ContactPageOutlinedIcon className="introicon" />
-        <h4>Resume</h4>
+      <div className="resume-header">
+        <div className="icon-box">
+          <ContactPageOutlinedIcon fontSize="inherit" />
+        </div>
+        <h2>My Journey</h2>
+        <p>
+          From education to professional experience — here’s a glance at my
+          story.
+        </p>
       </div>
-      <h2>Education and Experience</h2>
 
       <div className="timeline">
-        <div className="vertical-line" />
+        <div className="vertical-line"></div>
         {resumeData.map((item, index) => (
           <div
             key={index}
-            className={`history ${index % 2 === 0 ? "left" : "right"}`}
+            className={`timeline-item ${index % 2 === 0 ? "left" : "right"} ${
+              item.type
+            }`}
           >
-            <div className="content">
-              <div className="year">{item.year}</div>
-              <div className="experience">{item.experience}</div>
+            <div className="timeline-content">
+              <span className="timeline-year">{item.year}</span>
+              <h3>{item.title}</h3>
             </div>
-            <span className="point" />
           </div>
         ))}
       </div>

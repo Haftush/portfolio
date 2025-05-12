@@ -6,6 +6,7 @@ import emailjs from "emailjs-com";
 const Contact = () => {
   const form = useRef();
   const [errors, setErrors] = useState({ name: "", email: "" });
+  const [loading, setLoading] = useState(false);
 
   const validate = (name, email) => {
     let valid = true;
@@ -19,8 +20,9 @@ const Contact = () => {
       errorMessages.name = "Name should not contain numbers.";
       valid = false;
     }
-    const emailRegex = /^[^\s@]+@gmail\.com$/i;
 
+    // Allow all emails instead of just gmail.com
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.trim()) {
       errorMessages.email = "Email is required.";
       valid = false;
@@ -41,25 +43,30 @@ const Contact = () => {
 
     if (!validate(name, email)) return;
 
+    setLoading(true);
+
     emailjs
       .sendForm(
-        "Haphi_12@24", // ✅ Your actual service ID
-        "Haphitem_$1221", // ✅ Your actual template ID
+        "Haphi_12@24",
+        "Haphitem_$1221",
         form.current,
-        "dAyKikC92s-Cn_iUh" // ✅ Your actual public key
+        "dAyKikC92s-Cn_iUh"
       )
       .then(
         (result) => {
           console.log(result.text);
           alert("Message sent successfully!");
-          e.target.reset();
+          form.current.reset();
           setErrors({});
         },
         (error) => {
           console.log(error.text);
           alert("Something went wrong. Try again.");
         }
-      );
+      )
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -69,6 +76,7 @@ const Contact = () => {
         <h4>Contact</h4>
       </div>
       <h1>Let's Work Together</h1>
+
       <div className="contact-info">
         <p className="phonenum">+2519501350</p>
         <p>haftu.g.mu24@gmail.com</p>
@@ -76,17 +84,19 @@ const Contact = () => {
 
       <form className="contact-form" ref={form} onSubmit={sendEmail}>
         <label htmlFor="name">NAME *</label>
-        <input type="text" name="user_name" />
+        <input type="text" id="name" name="user_name" />
         {errors.name && <span className="error">{errors.name}</span>}
 
         <label htmlFor="email">EMAIL *</label>
-        <input type="email" name="user_email" />
+        <input type="email" id="email" name="user_email" />
         {errors.email && <span className="error">{errors.email}</span>}
 
         <label htmlFor="message">MESSAGE</label>
-        <textarea name="message" rows="15" required></textarea>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">SEND MESSAGE</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "SEND MESSAGE"}
+        </button>
       </form>
     </div>
   );
