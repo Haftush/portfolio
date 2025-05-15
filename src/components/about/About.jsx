@@ -46,7 +46,7 @@ const About = () => {
               <span>UI/UX Design</span>
               <span>Frontend Development</span>
               <span>Responsive Design</span>
-              <span>User Research</span>
+              <span>Mobile Developer</span>
             </div>
           </div>
         </motion.div>

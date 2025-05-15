@@ -13,14 +13,14 @@ import flutter from "../../assets/flutterimg.png";
 const designSkills = [
   { img: illustrator, name: "Illustrator", percent: "98%" },
   { img: photshop, name: "Photoshop", percent: "85%" },
-  { img: figma, name: "Figma", percent: "80%" },
+  { img: figma, name: "Figma", percent: "90%" },
   { img: indesin, name: "Indesign", percent: "70%" },
 ];
 
 const programmingSkills = [
-  { img: react, name: "React", percent: "80%" },
+  { img: react, name: "React", percent: "90%" },
   { img: node, name: "Node", percent: "80%" },
-  { img: flutter, name: "Flutter", percent: "80%" },
+  { img: flutter, name: "Flutter", percent: "85%" },
   { img: css, name: "CSS", percent: "95%" },
 ];
 

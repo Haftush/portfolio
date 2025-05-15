@@ -24,11 +24,12 @@ const Service = () => {
     {
       title: "Mobile App Development",
       description:
-        "I build fast, responsive, and user-friendly applications. I turn ideas into smooth digital experiences using modern tools and clean design principles.",
-      projects: "21+ Projects",
+        "Crafting modern, scalable, and intuitive mobile applications tailored for both Android and iOS platforms. I specialize in building seamless user experiences with clean UI, high performance, and efficient backend integration. Whether it’s a startup idea or enterprise solution, I bring your vision to life with Flutter, React Native, or native technologies.",
+      projects: "5+ Projects",
       icon: <FaMobileAlt className="service-icon" />,
       color: "#FF6584",
     },
+
     {
       title: "Back-End Development",
       description:
