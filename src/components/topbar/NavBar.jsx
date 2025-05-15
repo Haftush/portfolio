@@ -1,44 +1,25 @@
 import React, { useState } from "react";
 import "./navbar.css";
-
-// Import Material UI Icons
-import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
-import RecordVoiceOverOutlinedIcon from "@mui/icons-material/RecordVoiceOverOutlined";
-import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
-import DryCleaningOutlinedIcon from "@mui/icons-material/DryCleaningOutlined";
-import ConstructionOutlinedIcon from "@mui/icons-material/ConstructionOutlined";
-import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
+import {
+  FiHome,
+  FiUser,
+  FiFileText,
+  FiSettings,
+  FiCode,
+  FiMail,
+} from "react-icons/fi";
 
 const NavBar = () => {
   const [activeItem, setActiveItem] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const menuItems = [
-    { icon: <CottageOutlinedIcon />, tooltip: "Home", targetId: "home" },
-    {
-      icon: <RecordVoiceOverOutlinedIcon />,
-      tooltip: "About",
-      targetId: "about",
-    },
-    {
-      icon: <ContactPageOutlinedIcon />,
-      tooltip: "Resume",
-      targetId: "resume",
-    },
-    {
-      icon: <DryCleaningOutlinedIcon />,
-      tooltip: "Services",
-      targetId: "services",
-    },
-    {
-      icon: <ConstructionOutlinedIcon />,
-      tooltip: "Skills",
-      targetId: "skills",
-    },
-    {
-      icon: <ContactMailOutlinedIcon />,
-      tooltip: "Contact",
-      targetId: "contact",
-    },
+    { icon: <FiHome />, tooltip: "Home", targetId: "home" },
+    { icon: <FiUser />, tooltip: "About", targetId: "about" },
+    { icon: <FiFileText />, tooltip: "Resume", targetId: "resume" },
+    { icon: <FiSettings />, tooltip: "Services", targetId: "services" },
+    { icon: <FiCode />, tooltip: "Skills", targetId: "skills" },
+    { icon: <FiMail />, tooltip: "Contact", targetId: "contact" },
   ];
 
   const handleClick = (id) => {
@@ -50,7 +31,11 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav
+      className={`navbar ${isHovered ? "hovered" : ""}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <ul className="nav-list">
         {menuItems.map((item) => (
           <li
@@ -59,8 +44,6 @@ const NavBar = () => {
               activeItem === item.targetId ? "active" : ""
             }`}
             onClick={() => handleClick(item.targetId)}
-            onMouseEnter={() => setActiveItem(item.targetId)}
-            onMouseLeave={() => setActiveItem(null)}
           >
             <div className="nav-icon">{item.icon}</div>
             <span className="tooltip">{item.tooltip}</span>

@@ -42,7 +42,7 @@ const Skill = () => {
   return (
     <div className="skill-container">
       <div className="skill-button">
-        <ConstructionOutlinedIcon />
+        <ConstructionOutlinedIcon style={{ fontSize: "2rem" }} />
         <h4>Skill</h4>
       </div>
 

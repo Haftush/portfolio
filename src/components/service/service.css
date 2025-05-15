@@ -1,153 +1,195 @@
-/* Base Styles */
-.service-container {
-  display: flex;
-  flex-direction: column;
-  width: 800px;
-  max-width: 100%;
-  margin: -40px auto;
-  padding: 20px;
-  box-sizing: border-box;
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins :wght@400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.service-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+  background: linear-gradient(to bottom right, #f9f9ff, #fff);
+  position: relative;
 }
 
 .service-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #1d1836;
-  border-radius: 10px;
-  height: 50px;
-  color: white;
-  background-color: rgb(47, 35, 140);
-  padding: 0 15px;
-  width: fit-content;
-  margin-bottom: 20px; /* Reduced bottom margin */
-  font-size: 18px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 70px;
+  animation: fadeInUp 1s ease-out;
 }
 
-.service-header h4 {
-  margin-left: 10px;
-}
-
-.graphic-service {
-  background-color: #f5f5f5;
-  box-shadow: inset -2px 1px 17px -1px rgba(17, 21, 140, 0.15);
-  border-radius: 15px;
-  padding: 20px; /* Reduced padding for a tighter look */
-  margin-bottom: 15px; /* Reduced bottom margin */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.graphic-service:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.graphic-service h1 {
-  font-weight: 700;
-  font-family: "Roboto", monospace;
-  font-size: 26px;
-  margin-bottom: 8px; /* Reduced bottom margin */
-  color: rgb(47, 35, 140);
-  transition: color 0.3s ease;
-}
-
-.graphic-service h1:hover {
-  color: #1d1836;
-}
-
-.graphic-service span {
-  font-size: 16px;
-  line-height: 1.6;
-  display: block;
-  margin-bottom: 10px; /* Reduced bottom margin */
-  color: #333;
-}
-
-.completed-project {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.pname {
-  font-family: "Courier New", cursive;
-  color: rgb(47, 35, 140);
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.pname:hover {
-  color: #1d1836;
-}
-
-/* Animation for Services */
-.graphic-service {
-  animation: fadeIn 1s ease-out;
-}
-
-@keyframes fadeIn {
-  0% {
+@keyframes fadeInUp {
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* ========== Responsive Design ========== */
-@media screen and (max-width: 768px) {
-  .service-container {
-    width: 100%;
-    padding: 15px;
+.service-tag {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(45deg, #6c63ff, #9b8af9);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.service-tag:hover {
+  transform: scale(1.05);
+}
+
+.header-icon {
+  margin-right: 12px;
+  font-size: 1.3rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 6px solid var(--accent-color);
+  z-index: 1;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(var(--accent-color-rgb), 0.1) 0%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon-container {
+  width: 70px;
+  height: 70px;
+  background: rgba(var(--accent-color-rgb), 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon-container {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.service-card h3 {
+  font-size: 1.7rem;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.project-count {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-count span {
+  background: rgba(var(--accent-color-rgb), 0.1);
+  color: var(--accent-color);
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-count span:hover {
+  background: rgba(var(--accent-color-rgb), 0.2);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
   }
 
-  .service-header {
-    height: 40px;
-    font-size: 16px;
-    padding: 0 12px;
-    margin: 0 auto 20px auto; /* Reduced margin */
+  .service-card {
+    padding: 30px;
   }
 
-  .graphic-service h1 {
-    font-size: 22px;
-  }
-
-  .graphic-service span {
-    font-size: 15px;
-  }
-
-  .pname {
-    font-size: 14px;
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .service-container {
-    padding: 10px;
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
   }
 
-  .service-header {
-    font-size: 13px;
-    height: 35px;
-    padding: 0 10px;
+  .service-card {
+    padding: 25px;
   }
 
-  .graphic-service {
-    padding: 15px;
-    margin-bottom: 10px; /* Reduced margin */
-  }
-
-  .graphic-service h1 {
-    font-size: 18px;
-  }
-
-  .graphic-service span {
-    font-size: 14px;
-  }
-
-  .pname {
-    font-size: 13px;
+  .service-icon-container {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
   }
 }
