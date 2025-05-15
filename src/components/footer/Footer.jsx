@@ -14,8 +14,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaGithub />, href: "https://github.com" },
-    { icon: <FaLinkedin />, href: "https://linkedin.com" },
+    { icon: <FaGithub />, href: "https://github.com/Haftush" },
+    { icon: <FaLinkedin />, href: "linkedin.com/in/haftu-girmay-13b516355" },
     { icon: <FaTwitter />, href: "https://twitter.com" },
     { icon: <FaEnvelope />, href: "mailto:haftu.g.mu24@gmail.com" },
   ];
